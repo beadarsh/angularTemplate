@@ -122,5 +122,11 @@
       }
     }
   },
-  "defaultProject": "sampleTemplate"
+  "defaultProject": "sampleTemplate",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
+
