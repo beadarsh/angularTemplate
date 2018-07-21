@@ -5,7 +5,7 @@ import {URLSearchParams} from '@angular/http';
 // Create the project payload.
 const project = {
   files: {
-    'index.html': `<h2>Hello there!</h2>`,
+    'index.html': `<h2>Hello there HI allo!</h2>`,
     'index.ts': `// I'm empty.`,
     'randomFile.ts': '// You should delete me.'
   },
@@ -23,7 +23,7 @@ const httpOptions = {
 // Embed this project
 window['embedNewProject'] = () => {
 
-  
+
 
 }
 
@@ -34,7 +34,7 @@ window['embedNewProject'] = () => {
 })
 export class StackblitzComponent implements OnInit {
 
-  apiRoot: string = "http://localhost:3000"; 
+  apiRoot: string = "http://localhost:3000";
   responseData = null;
   constructor(private http: HttpClient) { }
 
@@ -47,15 +47,15 @@ export class StackblitzComponent implements OnInit {
     let search = new URLSearchParams();
     search.set('foo', 'moo');
     search.set('limit', '25');
-    return this.http.get(url); 
+    return this.http.get(url);
   }
 
   getGeneratedFiles() {
        this.getFiles().subscribe(
-          data => { 
+          data => {
             this.responseData = data;
           },
-          err => { 
+          err => {
             console.error(err);
           },
           () => {
