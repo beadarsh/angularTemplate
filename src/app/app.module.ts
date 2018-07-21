@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenCodeComponent } from './gen-code/gen-code.component';
-import { UpdateOnFlyGithubComponent } from './update-on-fly-github/update-on-fly-github.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { TestComponent } from './test/test.component';
 
@@ -29,7 +28,6 @@ import { FormUiComponent } from 'src/app/form-ui/form-ui.component';
     AppComponent,
     StackblitzComponent,
     GenCodeComponent,
-    UpdateOnFlyGithubComponent,
     TestComponent,
     MyNavComponent,
     NavItemComponent,
