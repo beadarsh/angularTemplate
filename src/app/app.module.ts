@@ -14,6 +14,15 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { TestComponent } from './test/test.component';
 
 
+// Nav service
+import { MyNavComponent } from './my-nav/my-nav.component';
+import { NavItemComponent } from './my-nav/nested-components/nav-item/nav-item.component';
+import { NavService } from './my-nav/nav.service';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { NavToolbarComponent } from 'src/app/my-nav/nested-components/nav-toolbar/nav-toolbar.component';
+import { FormUiComponent } from 'src/app/form-ui/form-ui.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,18 +30,23 @@ import { TestComponent } from './test/test.component';
     StackblitzComponent,
     GenCodeComponent,
     UpdateOnFlyGithubComponent,
-    TestComponent
+    TestComponent,
+    MyNavComponent,
+    NavItemComponent,
+    NavToolbarComponent,
+    FormUiComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule,    
+    MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [NavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

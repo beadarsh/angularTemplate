@@ -1,0 +1,53 @@
+.mat-card-header {
+  font-weight: 500;
+  font-size: 20px;
+  background-color: #272b35;
+  color: white !important;
+  border-top: 10px solid #2196F3;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-image: url(/assets/img/backgrounds/shattered.png);
+}
+
+.mat-card-content {
+  background-color: white;
+  padding: 10px;
+}
+
+.mat-drawer-content {
+  .mat-card {
+    background: none;
+    padding: 10px;
+
+    .mat-card-title{
+      font-size: 20px;
+      margin-bottom: 0px;
+    }
+  }
+  .mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+  }
+}
+
+
+
+
+
+
+
+.mat-card-title {
+  // font-size: 24px !important;
+  // border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+// .mat-card-subtitle {
+//   border-bottom: 1px solid rgba(0,0,0,.12);
+// }
+
+.mat-card-header {
+  // background-color: #398bf7 !important;
+  // border-bottom: 1px solid rgba(0,0,0,.12);
+  // margin-bottom: 10px;
+}
