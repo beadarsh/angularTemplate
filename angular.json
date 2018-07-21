@@ -24,7 +24,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "./src/assets/scss/dashboard.scss"
+              "src/assets/scss/dashboard.scss"
             ]
           },
           "configurations": {
