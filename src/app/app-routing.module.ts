@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import { TestComponent } from 'src/app/test/test.component';
-import { GenCodeComponent } from 'src/app/gen-code/gen-code.component';
-import { FormUiComponent } from 'src/app/form-ui/form-ui.component';
+import { TestComponent } from './test/test.component';
+import { GenCodeComponent } from './gen-code/gen-code.component';
+import { FormUiComponent } from './form-ui/form-ui.component';
 
 const routes: Routes = [
   {path: '', component: TestComponent, pathMatch: 'full'},

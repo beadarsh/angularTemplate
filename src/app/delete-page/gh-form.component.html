@@ -1,0 +1,231 @@
+<mat-card>
+      <mat-card-header>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <div fxFlex></div>
+      </mat-card-header>
+      <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="onFormSubmit(form.value)">
+                  <div style="display: flex; flex-direction: column;">
+
+
+
+
+
+
+
+
+
+      <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="16px">
+
+
+                  <mat-form-field fxFlex>
+                        <input formControlName="firstName" matInput placeholder="First Name">
+                        <mat-error>
+                              <span *ngIf="!form.get('firstName').valid && form.get('firstName').touched">
+                                  Please enter first name !!!
+                              </span>
+                        </mat-error>
+                  </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+
+                  <mat-form-field fxFlex>
+                        <input formControlName="lastName" matInput placeholder="Last Name">
+                        <mat-error>
+                              <span *ngIf="!form.get('lastName').valid && form.get('lastName').touched">
+                                  Please enter last name !!!
+                              </span>
+                        </mat-error>
+                  </mat-form-field>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      <app-number fxFlex formControlName="percentValue" [placeholder]="'percentage Commission'" [isPercent]="true"></app-number>
+
+
+
+
+
+
+
+
+
+
+           <mat-form-field>
+                  <mat-select formControlName="carModel" placeholder="Please Select">
+                  <mat-option>-- Select Any --</mat-option>
+
+                              <mat-option [value]="1">
+                              Audi
+                              </mat-option>
+
+                              <mat-option [value]="2">
+                              Bmw
+                              </mat-option>
+
+                              <mat-option [value]="3">
+                              Jaguar
+                              </mat-option>
+
+                  </mat-select>
+                  <mat-error>
+                  <span *ngIf="!form.get('carModel').valid && form.get('carModel').touched">
+                        Please enter car model type !!!</span>
+                  </mat-error>
+            </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+
+      <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap.gt-xs="16px">
+
+
+  <mat-form-field fxFlex>
+      <input matInput [matAutocomplete]="autoCompleteItem" formControlName="acPropertyObject" #autoCompleteInput placeholder="Please Select">
+      <mat-autocomplete #autoCompleteItem="matAutocomplete" [displayWith]="displayName.bind(this)"
+      (optionSelected)="this.form.patchValue({'acProperty': $event.option.value.id})">
+        <mat-option *ngFor="let item of acPropertyfilteredItems | async" [value]="item">
+            {{ item.name }}
+        </mat-option>
+      </mat-autocomplete>
+      <mat-error>
+        <span *ngIf="!form.get('acPropertyObject').valid && form.get('acPropertyObject').touched">
+          Please select a valid filter object type !!!</span>
+      </mat-error>
+ </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+
+                  <mat-form-field fxFlex>
+                        <input formControlName="address" matInput placeholder="Address">
+                        <mat-error>
+                              <span *ngIf="!form.get('address').valid && form.get('address').touched">
+                                  Please enter address !!!
+                              </span>
+                        </mat-error>
+                  </mat-form-field>
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      <mat-form-field >
+            <input formControlName="email" matInput placeholder="enter email address">
+            <mat-hint>use like : demo@demo.com</mat-hint>
+            <mat-error>
+                <span *ngIf="!form.get('email').valid && form.get('email').touched">Please enter email address !!!</span>
+            </mat-error>
+    </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+      <mat-form-field>
+            <input formControlName="dob" matInput [matDatepicker]="picker" placeholder="enter date of birth">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi="true" #picker></mat-datepicker>
+            <mat-error>
+            <span *ngIf="!form.get('dob').valid && form.get('dob').touched">Please enter date of birth !!!</span>
+            </mat-error>
+      </mat-form-field>
+
+
+
+
+
+
+
+
+
+
+     <span>Gender</span>
+     <br/>
+     <mat-radio-group formControlName="gender">
+
+     <mat-radio-button value="1">Male</mat-radio-button>
+
+     <mat-radio-button value="2">female</mat-radio-button>
+
+     </mat-radio-group>
+     <mat-error>
+         <span *ngIf="!form.get('gender').valid && form.get('gender').touched">Please enter Gender !!!</span>
+     </mat-error>
+
+
+
+
+
+
+
+
+
+      <br/>
+      <mat-slide-toggle formControlName="agreeToTerms">agreeToTerms</mat-slide-toggle>
+
+
+
+
+
+
+
+
+      <br/>
+      <button mat-raised-button color="accent" [disabled]="!form.valid || IsAccepted==0" style="max-width: 100px"> Submit</button>
+
+
+
+                  </div>
+            </form>
+      </mat-card-content>
+</mat-card>

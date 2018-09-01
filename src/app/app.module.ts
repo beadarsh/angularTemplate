@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { TextMaskModule } from 'angular2-text-mask';
 
 
 import { AppComponent } from './app.component';
@@ -11,16 +12,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GenCodeComponent } from './gen-code/gen-code.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { TestComponent } from './test/test.component';
-
+import { NumberComponent } from './shared/number-component/number.component';
 
 // Nav service
-import { MyNavComponent } from './my-nav/my-nav.component';
-import { NavItemComponent } from './my-nav/nested-components/nav-item/nav-item.component';
-import { NavService } from './my-nav/nav.service';
-import { AppRoutingModule } from 'src/app/app-routing.module';
-import { NavToolbarComponent } from 'src/app/my-nav/nested-components/nav-toolbar/nav-toolbar.component';
-import { FormUiComponent } from 'src/app/form-ui/form-ui.component';
-
+import { AppRoutingModule } from './app-routing.module';
+import { FormUiComponent } from './form-ui/form-ui.component';
+import { DatePickerComponent } from './shared/date-picker/date-picker.component';
+import { MAT_DATE_LOCALE } from '@angular/material';
+import { GhFormComponent } from './delete-page/gh-form.component';
+//import { DeletePageComponent } from './delete-page/gh-form.component';
 
 
 @NgModule({
@@ -29,10 +29,15 @@ import { FormUiComponent } from 'src/app/form-ui/form-ui.component';
     StackblitzComponent,
     GenCodeComponent,
     TestComponent,
-    MyNavComponent,
-    NavItemComponent,
-    NavToolbarComponent,
-    FormUiComponent
+    //MyNavComponent,
+    //NavItemComponent,
+    //NavToolbarComponent,
+    FormUiComponent,
+    DatePickerComponent,
+    NumberComponent,
+    NumberComponent,
+    GhFormComponent
+    //DeletePageComponent
   ],
   imports: [
     BrowserModule,
@@ -42,9 +47,10 @@ import { FormUiComponent } from 'src/app/form-ui/form-ui.component';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TextMaskModule
   ],
-  providers: [NavService],
+  providers: [ { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

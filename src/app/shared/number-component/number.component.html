@@ -1,0 +1,9 @@
+<mat-form-field style="width:100%">
+  <input matInput [ngModel]="internalValue"
+  (ngModelChange)="internalValue = unmask($event, allowEmptyValue); valueUpdated();"
+  [textMask]="{mask: numberMask}"
+  (click)="$event.target.select()"
+  [placeholder]="placeholder"
+  [maxLength]="19"
+  (keydown.tab)="tabEvent.emit($event)" fxFlex>
+</mat-form-field>

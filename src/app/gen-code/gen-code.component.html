@@ -9,31 +9,26 @@
       </mat-card-title>
     </div>
   </mat-card-header>
-  <mat-card-content style="padding: 0 24px 24px; flex: 1;">
+  <mat-card-content style="padding: 10px 24px 24px; flex: 1;">
     <form [formGroup]="form" (ngSubmit)="onFormSubmit(form.value)">
       <div style="display: flex; flex-direction: column;">
-
-
-        <mat-form-field>
-          <input matInput placeholder="First Name" formControlName="firstName">
-          <mat-error>
-            <span *ngIf="!form.get('firstName').valid && form.get('firstName').touched">
-              Please enter first name !!!</span>
-          </mat-error>
-        </mat-form-field>
-
-
-
-        <mat-form-field>
-          <input matInput placeholder="Last Name" formControlName="lastName">
-          <mat-error>
-            <span *ngIf="!form.get('lastName').valid && form.get('lastName').touched">
-              Please enter last name !!!</span>
-          </mat-error>
-        </mat-form-field>
-
-
-
+        <div fxLayout.gt-xs="row" fxLayoutGap.gt-xs="16px" fxLayout="column">
+          <mat-form-field fxFlex>
+            <input matInput placeholder="First Name" formControlName="firstName">
+            <mat-error>
+              <span *ngIf="!form.get('firstName').valid && form.get('firstName').touched">
+                Please enter first name !!!</span>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex>
+            <input matInput placeholder="Last Name" formControlName="lastName">
+            <mat-error>
+              <span *ngIf="!form.get('lastName').valid && form.get('lastName').touched">
+                Please enter last name !!!</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <app-number fxFlex formControlName="price" [placeholder]="'Price'" [isPercent]=true></app-number>
         <mat-form-field>
           <mat-select formControlName="carModel" placeholder="Please Select">
             <mat-option>-- Select Any --</mat-option>
@@ -56,7 +51,26 @@
               Please enter car model type !!!</span>
           </mat-error>
         </mat-form-field>
-
+        <mat-form-field fxFlex>
+          <input matInput [matAutocomplete]="autoCompleteItem" formControlName="propertyObject" #autoCompleteInput placeholder="Please Select">
+          <mat-autocomplete #autoCompleteItem="matAutocomplete" [displayWith]="displayName.bind(this)"
+          (optionSelected)="this.form.patchValue({'property': $event.option.value.id})">
+            <mat-option *ngFor="let item of filteredItems | async" [value]="item">
+                {{ item.name }}
+            </mat-option>
+          </mat-autocomplete>
+          <mat-error>
+            <span *ngIf="!form.get('propertyObject').valid && form.get('propertyObject').touched">
+              Please select a valid filter object type !!!</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select formControlName="property" >
+            <mat-option *ngFor="let item of initialData.items" [value]="item.id">
+                {{item.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
 
         <mat-form-field>
@@ -96,36 +110,28 @@
             <span *ngIf="!form.get('dob').valid && form.get('dob').touched">Please enter date of birth !!!</span>
           </mat-error>
         </mat-form-field>
+        <app-date-picker placeholder="Enter The First Date" formControlName="dateProperty" format="DD/MM/YYYY"></app-date-picker>
+
 
 
 
         <span>Gender</span>
         <br/>
         <mat-radio-group formControlName="gender">
-
           <mat-radio-button value="1">Male</mat-radio-button>
-
           <mat-radio-button value="2">female</mat-radio-button>
-
         </mat-radio-group>
         <mat-error>
           <span *ngIf="!form.get('gender').valid && form.get('gender').touched">Please enter Gender !!!</span>
         </mat-error>
-
-
-
-
-
         <br/>
         <mat-slide-toggle formControlName="agreeToTerms">agreeToTerms</mat-slide-toggle>
-
-
-
         <br/>
-        <button mat-raised-button color="accent" [disabled]="!form.valid || IsAccepted==0" style="max-width: 100px"> Submit</button>
+        <button mat-raised-button color="accent" [disabled]="!form.valid" style="max-width: 100px"> Submit</button>
 
 
       </div>
     </form>
+    {{form.value | json}}
   </mat-card-content>
 </mat-card>
