@@ -50,7 +50,7 @@ import { GhFormComponentTest } from './delete-page/gh-form.component';
     AppRoutingModule,
     TextMaskModule
   ],
-  providers: [ { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
+  providers: [ { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],//providers
   bootstrap: [AppComponent]
 })
 export class AppModule { }
