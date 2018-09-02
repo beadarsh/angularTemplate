@@ -19,7 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormUiComponent } from './form-ui/form-ui.component';
 import { DatePickerComponent } from './shared/date-picker/date-picker.component';
 import { MAT_DATE_LOCALE } from '@angular/material';
-import { GhFormComponent } from './delete-page/gh-form.component';
+import { GhFormComponentTest } from './delete-page/gh-form.component';
 //import { DeletePageComponent } from './delete-page/gh-form.component';
 
 
@@ -36,7 +36,7 @@ import { GhFormComponent } from './delete-page/gh-form.component';
     DatePickerComponent,
     NumberComponent,
     NumberComponent,
-    GhFormComponent
+    GhFormComponentTest
     //DeletePageComponent
   ],
   imports: [
