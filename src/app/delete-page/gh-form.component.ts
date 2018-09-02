@@ -15,7 +15,7 @@ import { startWith, map } from "rxjs/operators";
     styleUrls: ['gh-form.component.scss'],
     providers: [GhFormService]
 })
-export class GhFormComponent implements OnInit
+export class GhFormComponentTest implements OnInit
 {
     form: FormGroup;
     initialData: any;
