@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'test-route', component: TestComponent},
   {path: 'forms-component', component: GenCodeComponent},
   {path: 'forms-component-1', component: FormUiComponent}
-];
+];//-- routes
 
 // https://stackblitz.com/edit/dynamic-nested-sidenav-menu?file=app%2Fapp-routing.module.ts
 
