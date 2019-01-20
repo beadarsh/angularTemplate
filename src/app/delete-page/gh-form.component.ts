@@ -10,7 +10,7 @@ import { startWith, map } from "rxjs/operators";
     // selector: 'gh-form',
     // templateUrl: './gh-form.html',
     // styleUrls: ['./gh-form.component.scss']
-    selector: 'gh-form',
+    selector: 'gh-form-delete',
     templateUrl: 'gh-form.component.html',
     styleUrls: ['gh-form.component.scss'],
     providers: [GhFormService]
